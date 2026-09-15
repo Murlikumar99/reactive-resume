@@ -1,7 +1,7 @@
 {
-	"name": "Reactive Resume",
-	"short_name": "Reactive Resume",
-	"description": "A free and open-source resume builder.",
+	"name": "ResumeForge",
+	"short_name": "ResumeForge",
+	"description": "Free, open-source resume builder with professional templates, live editing, ATS checking, and beautiful exports.",
 	"id": "/?source=pwa",
 	"start_url": "/?source=pwa",
 	"scope": "/",
@@ -18,81 +18,14 @@
 		{ "src": "maskable-icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
 	],
 	"screenshots": [
-		{
-			"src": "screenshots/web/1-landing-page.webp",
-			"sizes": "1920x1080 any",
-			"type": "image/webp",
-			"form_factor": "wide",
-			"label": "Landing Page"
-		},
-		{
-			"src": "screenshots/web/2-resume-dashboard.webp",
-			"sizes": "1920x1080 any",
-			"type": "image/webp",
-			"form_factor": "wide",
-			"label": "Resume Dashboard"
-		},
-		{
-			"src": "screenshots/web/3-builder-screen.webp",
-			"sizes": "1920x1080 any",
-			"type": "image/webp",
-			"form_factor": "wide",
-			"label": "Builder Screen"
-		},
-		{
-			"src": "screenshots/web/4-template-gallery.webp",
-			"sizes": "1920x1080 any",
-			"type": "image/webp",
-			"form_factor": "wide",
-			"label": "Template Gallery"
-		},
-		{
-			"src": "screenshots/mobile/1-landing-page.webp",
-			"sizes": "1284x2778 any",
-			"type": "image/webp",
-			"form_factor": "narrow",
-			"label": "Landing Page"
-		},
-		{
-			"src": "screenshots/mobile/2-resume-dashboard.webp",
-			"sizes": "1284x2778 any",
-			"type": "image/webp",
-			"form_factor": "narrow",
-			"label": "Resume Dashboard"
-		},
-		{
-			"src": "screenshots/mobile/3-builder-screen.webp",
-			"sizes": "1284x2778 any",
-			"type": "image/webp",
-			"form_factor": "narrow",
-			"label": "Builder Screen"
-		},
-		{
-			"src": "screenshots/mobile/4-template-gallery.webp",
-			"sizes": "1284x2778 any",
-			"type": "image/webp",
-			"form_factor": "narrow",
-			"label": "Template Gallery"
-		}
+		{ "src": "screenshots/web/1-landing-page.webp", "sizes": "1920x1080 any", "type": "image/webp", "form_factor": "wide", "label": "ResumeForge Landing Page" },
+		{ "src": "screenshots/web/2-resume-dashboard.webp", "sizes": "1920x1080 any", "type": "image/webp", "form_factor": "wide", "label": "ResumeForge Resume Dashboard" },
+		{ "src": "screenshots/web/3-builder-screen.webp", "sizes": "1920x1080 any", "type": "image/webp", "form_factor": "wide", "label": "ResumeForge Builder" },
+		{ "src": "screenshots/web/4-template-gallery.webp", "sizes": "1920x1080 any", "type": "image/webp", "form_factor": "wide", "label": "ResumeForge Templates" },
+		{ "src": "screenshots/mobile/1-landing-page.webp", "sizes": "1284x2778 any", "type": "image/webp", "form_factor": "narrow", "label": "ResumeForge Mobile Landing Page" },
+		{ "src": "screenshots/mobile/2-resume-dashboard.webp", "sizes": "1284x2778 any", "type": "image/webp", "form_factor": "narrow", "label": "ResumeForge Mobile Dashboard" },
+		{ "src": "screenshots/mobile/3-builder-screen.webp", "sizes": "1284x2778 any", "type": "image/webp", "form_factor": "narrow", "label": "ResumeForge Mobile Builder" },
+		{ "src": "screenshots/mobile/4-template-gallery.webp", "sizes": "1284x2778 any", "type": "image/webp", "form_factor": "narrow", "label": "ResumeForge Mobile Templates" }
 	],
-	"categories": [
-		"ai",
-		"builder",
-		"business",
-		"career",
-		"cv",
-		"editor",
-		"free",
-		"generator",
-		"job-search",
-		"multilingual",
-		"open-source",
-		"privacy",
-		"productivity",
-		"resume",
-		"self-hosted",
-		"templates",
-		"utilities",
-		"writing"
-	]
+	"categories": ["ai", "builder", "business", "career", "cv", "editor", "free", "generator", "job-search", "multilingual", "open-source", "privacy", "productivity", "resume", "self-hosted", "templates", "utilities", "writing"]
 }
