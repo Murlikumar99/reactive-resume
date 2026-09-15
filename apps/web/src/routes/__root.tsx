@@ -40,26 +40,22 @@ type RouterContext = {
 	flags: FeatureFlags;
 };
 
-const appName = "Reactive Resume";
-const tagline = "A free and open-source resume builder";
-const title = `${appName} — ${tagline}`;
-// Keep under ~120 characters so Google's mobile SERP snippet is not truncated at 3 lines.
+const appName = "ResumeForge";
+const title = "ResumeForge — Build a Resume That Gets Noticed";
 const description =
-	"Free, open-source resume builder. Create, update, and share your resume, with no ads and no paywall.";
+	"Free, open-source resume builder with professional templates, live editing, ATS checking, and beautiful exports.";
 const iconContextValue: IconProps = { size: 16, weight: "regular" };
 
 export const Route = createRootRouteWithContext<RouterContext>()({
 	component: RootComponent,
 	head: () => {
-		const appUrl = typeof window !== "undefined" ? window.location.origin : "https://rxresu.me";
+		const appUrl = typeof window !== "undefined" ? window.location.origin : "https://resumeforge.app";
 
 		return {
 			links: [
-				// Icons
 				{ rel: "icon", href: "/favicon.ico", type: "image/x-icon", sizes: "128x128" },
 				{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml", sizes: "256x256 any" },
 				{ rel: "apple-touch-icon", href: "/apple-touch-icon-180x180.png", type: "image/png", sizes: "180x180 any" },
-				// Manifest
 				{ rel: "manifest", href: "/manifest.webmanifest", crossOrigin: "use-credentials" },
 			],
 			meta: [
@@ -67,20 +63,17 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 				{ charSet: "UTF-8" },
 				{ name: "description", content: description },
 				{ name: "viewport", content: "width=device-width, initial-scale=1" },
-				// Meta Tags
 				{ name: "theme-color", content: "#09090B" },
-				{ name: "application-name", content: "Reactive Resume" },
+				{ name: "application-name", content: appName },
 				{ name: "mobile-web-app-capable", content: "yes" },
 				{ name: "apple-mobile-web-app-capable", content: "yes" },
-				{ name: "apple-mobile-web-app-title", content: "Reactive Resume" },
+				{ name: "apple-mobile-web-app-title", content: appName },
 				{ name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
-				// Twitter Tags — X only reads these as `name`, not `property`
 				{ name: "twitter:image", content: `${appUrl}/opengraph/banner.jpg` },
 				{ name: "twitter:card", content: "summary_large_image" },
 				{ name: "twitter:url", content: appUrl },
 				{ name: "twitter:title", content: title },
 				{ name: "twitter:description", content: description },
-				// OpenGraph Tags
 				{ property: "og:type", content: "website" },
 				{ property: "og:image", content: `${appUrl}/opengraph/banner.jpg` },
 				{ property: "og:site_name", content: appName },
@@ -97,9 +90,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 			getSession(),
 			client.flags.get(),
 		]);
-
 		await loadLocale(locale);
-
 		return { theme, locale, session, flags };
 	},
 });
@@ -107,8 +98,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 function RootComponent() {
 	const { theme, locale, queryClient } = Route.useRouteContext();
 	const dir = isRTL(locale) ? "rtl" : "ltr";
-
-	// Suppress the app-wide donation toast inside the builder so it doesn't cover the right-sidebar controls.
 	const isBuilder = useRouterState({ select: (s) => s.location.pathname.startsWith("/builder") });
 
 	useEffect(() => {
@@ -120,7 +109,6 @@ function RootComponent() {
 	return (
 		<>
 			<HeadContent />
-
 			<QueryClientProvider client={queryClient}>
 				<MotionConfig reducedMotion="user">
 					<LazyMotion features={domAnimation}>
@@ -133,25 +121,17 @@ function RootComponent() {
 												<ConfirmDialogProvider>
 													<PromptDialogProvider>
 														<Outlet />
-
 														{!isBuilder && <DonationToast />}
 														<DialogManager />
 														<CommandPalette />
 														<Toaster />
-
 														{import.meta.env.DEV && <BreakpointIndicator />}
 														{import.meta.env.DEV && (
 															<TanStackDevtools
 																config={{ position: "bottom-left" }}
 																plugins={[
-																	{
-																		name: "TanStack Query",
-																		render: <ReactQueryDevtoolsPanel />,
-																	},
-																	{
-																		name: "TanStack Router",
-																		render: <TanStackRouterDevtoolsPanel />,
-																	},
+																	{ name: "TanStack Query", render: <ReactQueryDevtoolsPanel /> },
+																	{ name: "TanStack Router", render: <TanStackRouterDevtoolsPanel /> },
 																]}
 															/>
 														)}

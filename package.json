@@ -1,6 +1,6 @@
 {
-	"name": "reactive-resume",
-	"description": "Reactive Resume is a free and open-source resume builder that makes it easy to create, update, and share your resume.",
+	"name": "resumeforge",
+	"description": "ResumeForge is a free and open-source resume builder with professional templates, live editing, ATS checking, and beautiful exports.",
 	"version": "5.3.0",
 	"private": true,
 	"license": "MIT",
@@ -11,17 +11,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/reactive-resume/reactive-resume.git"
+		"url": "https://github.com/Murlikumar99/reactive-resume.git"
 	},
 	"engines": {
 		"node": ">=24"
 	},
 	"packageManager": "pnpm@12.3.4+sha512.961aa41fb077da3a04a441d9f8e15ebc0c96da8ef710b2eb67bf9ee7cb0610eabd48f1fd85f51cffe73846785fa0f87c56a3a872a1d893f8446741b5cce45457",
-	"workspaces": [
-		"apps/*",
-		"packages/*",
-		"tooling"
-	],
+	"workspaces": ["apps/*", "packages/*", "tooling"],
 	"scripts": {
 		"build": "pnpm pdf:translations && turbo run build",
 		"doctor": "turbo run doctor",
